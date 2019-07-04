@@ -1,17 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="ImpliedProject1.AddProduct" %>
 
-
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 <style>
-
-    * {box-sizing: border-box}
+   * {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
-
 /* Style the tab */
 .tab {
   float: left;
@@ -20,7 +15,6 @@ body {font-family: "Lato", sans-serif;}
   width: 200px; 
   height: 100px;
 }
-
 /* Style the buttons inside the tab*/
 .tab button {
   display: block;
@@ -35,12 +29,10 @@ body {font-family: "Lato", sans-serif;}
   transition: 0.3s;
   font-size: 17px;
 }
-
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
 }
-
 /* Create an active/current "tab button" class */
 .tab button.active {
   background-color: #ccc;
@@ -56,10 +48,30 @@ body {font-family: "Lato", sans-serif;}
   height: 700px;
 }
     .auto-style1 {
-        margin-top: 38px;
+        width: 100%;
+        float: left;
     }
-</style>
+    .auto-style2 {
+        width: 143px;
+    }
+    .auto-style3 {
+        width: 168px;
+    }
+    .auto-style4 {
+        width: 143px;
+        height: 26px;
+    }
+    .auto-style5 {
+        width: 168px;
+        height: 26px;
+    }
+    .auto-style6 {
+        height: 26px;
+    }
+    </style>
 </head>
+   
+    <form id="form1" runat="server">
    
     <div class="tab">
         
@@ -69,28 +81,55 @@ body {font-family: "Lato", sans-serif;}
 </div>
 
 <div id="Home" class="tabcontent">
-  <center><h2>TIME ONLINE</h2></center>
+  <center><h2>&nbsp;</h2></center>
   
-    <h1>Product</h1>
+    <table align="center" class="auto-style1">
+        <tr>
+            <td class="auto-style2">Brand</td>
+            <td class="auto-style3">
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </td>
+            <td>Product Name</td>
+            <td>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">Product Id</td>
+            <td class="auto-style3">
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            </td>
+            <td>Product Id</td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style4">Sales Price</td>
+            <td class="auto-style5">
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            </td>
+            <td class="auto-style6">Available Quantity</td>
+            <td class="auto-style6">
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="42px">
+                </asp:DropDownList>
+            </td>
+        </tr>
+    </table>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <center><asp:Button ID="UpdateBrand" Text="Update" runat="server" ></asp:Button>&nbsp;&nbsp;
 
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+   
+</form>
 
-<script>
-    function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    //document.getElementById("defaultOpen").click();
-</script>
    
 </html>

@@ -71,13 +71,13 @@ body {font-family: "Lato", sans-serif;}
 
 <div id="Home" class="tabcontent">
   <center><h3 class="auto-style1">TIME ONLINE</h3></Center>
-
+    <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
  <h3 class="auto-style1">Poduct list</h3>
    <PRE>                                                                                           <asp:Button ID="UpdateBrand" Text="Update" runat="server" ></asp:Button></pre>&nbsp;&nbsp;
 
         <br />
         <br /><center>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductId" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductId" DataSourceID="SqlDataSource1">
         <Columns>
             <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
             <asp:BoundField DataField="ProductId" HeaderText="ProductId" ReadOnly="True" SortExpression="ProductId" />

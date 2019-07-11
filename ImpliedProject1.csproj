@@ -73,9 +73,11 @@
     <Content Include="deleteicon.jpg" />
     <Content Include="EditBrand.aspx" />
     <Content Include="editicon.png" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="Experiment.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="ProductList.aspx" />
     <Content Include="RegistrationPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -108,6 +110,13 @@
     <Compile Include="EditBrand.aspx.designer.cs">
       <DependentUpon>EditBrand.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Experiment.aspx.cs">
       <DependentUpon>Experiment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +137,13 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPage.aspx.cs">

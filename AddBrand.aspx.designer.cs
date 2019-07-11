@@ -13,13 +13,13 @@ namespace ImpliedProject1 {
     public partial class AddBrand {
         
         /// <summary>
-        ///  BrandName control.
+        /// BrandName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox  BrandName;
+        protected global::System.Web.UI.WebControls.TextBox BrandName;
         
         /// <summary>
         /// BrandId control.
@@ -38,6 +38,15 @@ namespace ImpliedProject1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddBrandButton;
+        
+        /// <summary>
+        /// UpdateBrandButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateBrandButton;
         
         /// <summary>
         /// GridView3 control.

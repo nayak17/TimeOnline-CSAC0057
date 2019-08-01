@@ -70,7 +70,7 @@ body {font-family: "Lato", sans-serif;}
 
 <div id="Home" class="tabcontent">
   <center><h2>TIME ONLINE</h2></center>
-  
+  <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
     
     
         

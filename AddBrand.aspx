@@ -68,7 +68,7 @@ body {font-family: "Lato", sans-serif;}
 
 <div id="Home" class="tabcontent">
   <center><h2>TIME ONLINE</h2></center>
-  
+  <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
     
     
         
@@ -77,18 +77,21 @@ body {font-family: "Lato", sans-serif;}
         <p><h3>Add Brand</h3>
         
        
-         Brand Name <asp:TextBox ID="BrandName" runat="server" ></asp:TextBox></br></br></br>
+         Brand Name <asp:TextBox ID="BrandName" runat="server" ></asp:TextBox> </br> </br> </br>
          Brand Id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:TextBox ID="BrandId" runat="server"></asp:TextBox></br>
-         <center><asp:Button ID="AddBrandButton" Text="Add" runat="server" OnClick="AddBrandButton_Click"></asp:Button></center>
+         <center><asp:Button ID="AddBrandButton" Text="Add" runat="server" OnClick="AddBrandButton_Click"></asp:Button>&nbsp&nbsp
+         <asp:Button ID="UpdateBrandButton" Text="Update" runat="server" OnClick="UpdateBrandButton_Click"></asp:Button>
 
-            <center><asp:GridView ID="GridView3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="BrandId">
+             </center>
+            
+               <center> <asp:GridView ID="GridView3" runat="server" CellPadding="4" ForeColor="#333333" 
+                    GridLines="None" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="BrandId">
 
              
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="BrandId" HeaderText="BrandId" SortExpression="BrandId" ReadOnly="True" />
                     <asp:BoundField DataField="BrandName" HeaderText="BrandName" SortExpression="BrandName" />
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -72,27 +72,26 @@ body {font-family: "Lato", sans-serif;}
   <center><h2>TIME ONLINE</h2></center>
   
     
-    
+   <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
         
  
      <form id="AddBrand" runat="server">
-        <p><h3>Add Brand</h3>
+        <p><h3>Edit Brand</h3>
         
        
          Brand Name <asp:TextBox ID="BrandName" runat="server" ></asp:TextBox></br></br></br>
          Brand Id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:TextBox ID="BrandId" runat="server"></asp:TextBox></br>
          <center><asp:Button ID="UpdateBrand" Text="Update" runat="server" ></asp:Button>&nbsp;&nbsp;
             <asp:Button ID="CancelBrand" Text="Cancel" runat="server" ></asp:Button></center>
-            <center><asp:GridView ID="GridView3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+            <center><asp:GridView ID="GridView3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="BrandId" >
 
              
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="BrandId" HeaderText="BrandId" SortExpression="BrandId" />
+                    <asp:BoundField DataField="BrandId" HeaderText="BrandId" SortExpression="BrandId" ReadOnly="True" />
                     <asp:BoundField DataField="BrandName" HeaderText="BrandName" SortExpression="BrandName" />
                      
-                    <asp:ButtonField ButtonType="Button" CommandName="Edit" HeaderText="Edit" ShowHeader="True" Text="Button" />
-                    <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Delete" ShowHeader="True" Text="Button" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                      
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
@@ -106,6 +105,19 @@ body {font-family: "Lato", sans-serif;}
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AppliedProjectConnectionString %>" DeleteCommand="DELETE FROM [Brand] WHERE [BrandId] = @BrandId" InsertCommand="INSERT INTO [Brand] ([BrandId], [BrandName]) VALUES (@BrandId, @BrandName)" SelectCommand="SELECT * FROM [Brand]" UpdateCommand="UPDATE [Brand] SET [BrandName] = @BrandName WHERE [BrandId] = @BrandId">
+                    <DeleteParameters>
+                        <asp:Parameter Name="BrandId" Type="String" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="BrandId" Type="String" />
+                        <asp:Parameter Name="BrandName" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="BrandName" Type="String" />
+                        <asp:Parameter Name="BrandId" Type="String" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
                 </center>
          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppliedProjectConnectionString %>" SelectCommand="SELECT [BrandId], [BrandName] FROM [Brand]"></asp:SqlDataSource>
          </br></br>

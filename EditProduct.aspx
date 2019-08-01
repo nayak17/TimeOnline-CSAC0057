@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="ImpliedProject1.AddProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="ImpliedProject1.EditProduct" %>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,7 +84,8 @@ body {font-family: "Lato", sans-serif;}
 <div id="Home" class="tabcontent">
   <center><h2>&nbsp;</h2></center>
    <center><h2>TIME ONLINE</h2></center>
-    <h4>Add Product</h4>
+    
+   <h4>Edit Product</h4>
     <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
     <table align="center" class="auto-style1">
         <tr>
@@ -101,9 +103,10 @@ body {font-family: "Lato", sans-serif;}
             <td class="auto-style3">
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             </td>
-            <td>&nbsp;</td>
+            <td>Product Id</td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">Sales Price</td>
@@ -112,9 +115,8 @@ body {font-family: "Lato", sans-serif;}
             </td>
             <td class="auto-style6">Available Quantity</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="42px" DataSourceID="SqlDataSource2" DataTextField="AvailableQuantity" DataValueField="AvailableQuantity">
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="42px" DataSourceID="SqlDataSource1" DataTextField="AvailableQuantity" DataValueField="AvailableQuantity">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AppliedProjectConnectionString %>" SelectCommand="SELECT [AvailableQuantity] FROM [AvailableQuantity]"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
@@ -124,7 +126,7 @@ body {font-family: "Lato", sans-serif;}
     </br>
     </br>
     </br>
-    <center><asp:Button ID="Add" Text="Add" runat="server" OnClick="Add_Click" ></asp:Button>&nbsp;&nbsp;
+    <center><asp:Button ID="UpdateBrand" Text="Update" runat="server" ></asp:Button>&nbsp;&nbsp;
 
         <br />
         <br />
@@ -132,32 +134,28 @@ body {font-family: "Lato", sans-serif;}
             <Columns>
                 <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
                 <asp:BoundField DataField="ProductId" HeaderText="ProductId" ReadOnly="True" SortExpression="ProductId" />
-                <asp:BoundField DataField="SalesPrice" HeaderText="SalesPrice" SortExpression="SalesPrice" />
                 <asp:BoundField DataField="AvailableQuantity" HeaderText="AvailableQuantity" SortExpression="AvailableQuantity" />
-                <asp:BoundField DataField="Brand" HeaderText="Brand" SortExpression="Brand" />
+                <asp:BoundField DataField="SalesPrice" HeaderText="SalesPrice" SortExpression="SalesPrice" />
+                <asp:BoundField DataField="NumberOfProduct" HeaderText="NumberOfProduct" SortExpression="NumberOfProduct" />
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Columns>
         </asp:GridView>
    
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppliedProjectConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO [Product] ([ProductName], [ProductId], [SalesPrice], [AvailableQuantity], [Brand], [BrandId], [NumberOfProduct]) VALUES (@ProductName, @ProductId, @SalesPrice, @AvailableQuantity, @Brand, @BrandId, @NumberOfProduct)" SelectCommand="SELECT * FROM [Product]" UpdateCommand="UPDATE [Product] SET [ProductName] = @ProductName, [SalesPrice] = @SalesPrice, [AvailableQuantity] = @AvailableQuantity, [Brand] = @Brand, [BrandId] = @BrandId, [NumberOfProduct] = @NumberOfProduct WHERE [ProductId] = @ProductId">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppliedProjectConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO [Product] ([ProductName], [ProductId], [AvailableQuantity], [SalesPrice], [NumberOfProduct]) VALUES (@ProductName, @ProductId, @AvailableQuantity, @SalesPrice, @NumberOfProduct)" SelectCommand="SELECT [ProductName], [ProductId], [AvailableQuantity], [SalesPrice], [NumberOfProduct] FROM [Product]" UpdateCommand="UPDATE [Product] SET [ProductName] = @ProductName, [AvailableQuantity] = @AvailableQuantity, [SalesPrice] = @SalesPrice, [NumberOfProduct] = @NumberOfProduct WHERE [ProductId] = @ProductId">
             <DeleteParameters>
                 <asp:Parameter Name="ProductId" Type="String" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="ProductName" Type="String" />
                 <asp:Parameter Name="ProductId" Type="String" />
-                <asp:Parameter Name="SalesPrice" Type="Int32" />
                 <asp:Parameter Name="AvailableQuantity" Type="Int32" />
-                <asp:Parameter Name="Brand" Type="String" />
-                <asp:Parameter Name="BrandId" Type="String" />
+                <asp:Parameter Name="SalesPrice" Type="Int32" />
                 <asp:Parameter Name="NumberOfProduct" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ProductName" Type="String" />
-                <asp:Parameter Name="SalesPrice" Type="Int32" />
                 <asp:Parameter Name="AvailableQuantity" Type="Int32" />
-                <asp:Parameter Name="Brand" Type="String" />
-                <asp:Parameter Name="BrandId" Type="String" />
+                <asp:Parameter Name="SalesPrice" Type="Int32" />
                 <asp:Parameter Name="NumberOfProduct" Type="String" />
                 <asp:Parameter Name="ProductId" Type="String" />
             </UpdateParameters>
@@ -165,5 +163,6 @@ body {font-family: "Lato", sans-serif;}
    
 </form>
 
-   
+  
 </html>
+

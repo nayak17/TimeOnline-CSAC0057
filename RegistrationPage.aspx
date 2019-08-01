@@ -21,6 +21,7 @@
     <form id="form1" runat="server">
         <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TIME ONLINE</h1><br />
+            <pre>                                                                                                                    <a href="LoginPage.aspx">Log Out</a></pre>
             <br />
             <table class="auto-style1">
                 <tr>

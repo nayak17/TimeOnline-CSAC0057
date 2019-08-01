@@ -45,5 +45,10 @@ namespace ImpliedProject1
 
             }
         }
+
+        protected void UpdateBrandButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditBrand.aspx");
+        }
     }
 }

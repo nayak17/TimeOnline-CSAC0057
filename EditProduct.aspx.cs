@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ImpliedProject1
 {
-    public partial class EditBrand : System.Web.UI.Page
+    public partial class EditProduct : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }
